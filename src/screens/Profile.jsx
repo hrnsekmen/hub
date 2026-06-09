@@ -42,7 +42,7 @@ export default function Profile({ bookings }) {
         <button className="btn btn-ghost">Çıkış yap</button>
       </div>
       <p className="faint" style={{ textAlign: 'center', fontSize: 12, marginTop: 18 }}>
-        HUM — İnsan Şehir Anı
+        HUM
       </p>
     </div>
   )

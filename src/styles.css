@@ -4,6 +4,16 @@
    Palette: warm sand & sage. Tech should feel invisible.
    ========================================================================= */
 
+/* Brand typeface — Satoshi (variable) */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./fonts/Satoshi-Variable.ttf') format('truetype-variations'),
+       url('./fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Core palette */
   --sand: #e8e1d4;
@@ -20,9 +30,9 @@
   --line: #ddd4c4;
   --white-warm: #fffdf8;
 
-  /* Type */
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Type — Satoshi everywhere (one brand voice) */
+  --serif: 'Satoshi', system-ui, -apple-system, sans-serif;
+  --sans: 'Satoshi', system-ui, -apple-system, sans-serif;
 
   /* Motion — slow, eased, never snappy */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -143,16 +153,16 @@ input, textarea { -webkit-user-select: text; user-select: text; }
   color: var(--ink-faint);
   font-weight: 600;
 }
-.serif { font-family: var(--serif); font-weight: 380; letter-spacing: -0.01em; }
+.serif { font-family: var(--serif); font-weight: 480; letter-spacing: -0.015em; }
 .display {
   font-family: var(--serif);
-  font-weight: 380;
+  font-weight: 540;
   font-size: 34px;
   line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
-.h2 { font-family: var(--serif); font-weight: 400; font-size: 22px; letter-spacing: -0.01em; }
+.h2 { font-family: var(--serif); font-weight: 520; font-size: 22px; letter-spacing: -0.02em; }
 .muted { color: var(--ink-soft); }
 .faint { color: var(--ink-faint); }
 
@@ -164,25 +174,28 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .brandbar {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 13px;
   padding: 6px 24px 0;
+}
+.brandbar .brand-lockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .brandbar .wordmark {
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: 24px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: 0.22em;
+  line-height: 1;
   color: var(--ink);
-  padding-left: 2px;
 }
 .brandbar .brand-tag {
-  margin-left: auto;
-  text-align: right;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  margin-top: 5px;
+  font-size: 9.5px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  line-height: 1.5;
   font-weight: 600;
 }
 .bh-brand { display: flex; align-items: center; gap: 10px; }
@@ -218,7 +231,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 }
 .hero > * { position: relative; z-index: 2; }
 .hero .hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-.hero .hero-title { font-family: var(--serif); font-weight: 420; font-size: 30px; line-height: 1.05; letter-spacing: -0.02em; max-width: 80%; }
+.hero .hero-title { font-family: var(--serif); font-weight: 540; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em; max-width: 80%; }
 .hero .hero-sub { margin-top: 10px; font-size: 14px; line-height: 1.5; color: rgba(46,42,36,.74); max-width: 86%; }
 .hero .hero-when { margin-top: 18px; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; }
 
@@ -245,7 +258,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 /* ===== Section ============================================================= */
 .section { margin-top: 30px; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; padding: 0 24px 14px; }
-.section-head h3 { font-family: var(--serif); font-weight: 400; font-size: 19px; }
+.section-head h3 { font-family: var(--serif); font-weight: 520; font-size: 19px; letter-spacing: -0.02em; }
 .section-head .link { font-size: 13px; color: var(--sage-deep); font-weight: 500; background: none; border: none; cursor: pointer; }
 
 /* Horizontal scroller */
@@ -279,7 +292,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 }
 .ecard .ecard-body { padding: 14px 16px 16px; }
 .ecard .ecard-cat { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
-.ecard .ecard-title { font-family: var(--serif); font-size: 18px; font-weight: 420; margin: 6px 0 8px; line-height: 1.15; }
+.ecard .ecard-title { font-family: var(--serif); font-size: 18px; font-weight: 540; margin: 6px 0 8px; line-height: 1.15; }
 .ecard .ecard-foot { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: var(--ink-soft); }
 .ecard .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-faint); display: inline-block; margin: 0 7px; vertical-align: middle; }
 
@@ -300,7 +313,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .erow .erow-art { flex: 0 0 76px; width: 76px; border-radius: 16px; position: relative; overflow: hidden; }
 .erow .erow-body { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 .erow .erow-cat { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
-.erow .erow-title { font-family: var(--serif); font-size: 18px; font-weight: 420; margin: 3px 0 5px; line-height: 1.1; }
+.erow .erow-title { font-family: var(--serif); font-size: 18px; font-weight: 540; margin: 3px 0 5px; line-height: 1.1; }
 .erow .erow-meta { font-size: 12.5px; color: var(--ink-soft); }
 .erow .erow-time { flex: 0 0 auto; text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; padding-right: 4px; }
 .erow .erow-time .t { font-family: var(--serif); font-size: 17px; }
@@ -438,7 +451,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
   border: none; cursor: pointer; display: grid; place-items: center;
 }
 .detail-art .orb-deco { position: absolute; width: 280px; height: 280px; right: -60px; top: -100px; border-radius: 50%; background: rgba(255,255,255,.26); filter: blur(8px); animation: float 10s var(--ease) infinite alternate; }
-.detail-art .d-title { position: relative; z-index: 4; font-family: var(--serif); font-weight: 420; font-size: 32px; line-height: 1.04; letter-spacing: -.02em; max-width: 90%; }
+.detail-art .d-title { position: relative; z-index: 4; font-family: var(--serif); font-weight: 540; font-size: 32px; line-height: 1.04; letter-spacing: -.03em; max-width: 90%; }
 
 .detail-body { padding: 22px 24px 0; }
 .fact-row { display: flex; gap: 10px; margin: 2px 0 22px; }
@@ -482,7 +495,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .moments-card .glow { position: absolute; width: 220px; height: 220px; right: -60px; bottom: -90px; border-radius: 50%; background: radial-gradient(circle, rgba(168,181,160,.6), transparent 70%); }
 .moments-card > * { position: relative; z-index: 2; }
 .moments-card .tier { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-soft); font-weight: 600; }
-.moments-card .count { font-family: var(--serif); font-size: 44px; line-height: 1; margin: 12px 0 4px; }
+.moments-card .count { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1; margin: 12px 0 4px; letter-spacing: -0.02em; }
 .moments-card .count small { font-size: 18px; color: rgba(243,238,228,.6); }
 .moments-card .pgoal { font-size: 13px; color: rgba(243,238,228,.72); }
 .mbar { height: 6px; border-radius: 100px; background: rgba(255,255,255,.16); margin-top: 16px; overflow: hidden; }
@@ -530,7 +543,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 /* ===== Profile ============================================================= */
 .profile-head { display: flex; flex-direction: column; align-items: center; padding: 18px 24px 8px; text-align: center; }
 .profile-av { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, var(--sage-soft), var(--clay)); display: grid; place-items: center; font-family: var(--serif); font-size: 34px; color: var(--white-warm); box-shadow: var(--shadow-soft); }
-.profile-name { font-family: var(--serif); font-size: 26px; margin-top: 14px; }
+.profile-name { font-family: var(--serif); font-weight: 560; font-size: 26px; margin-top: 14px; letter-spacing: -0.02em; }
 .profile-meta { font-size: 13px; color: var(--ink-faint); margin-top: 3px; }
 
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 22px 24px 8px; }
@@ -563,6 +576,40 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .bh-top { display: flex; justify-content: space-between; align-items: center; padding: 56px 24px 0; }
 .bh-top .x { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.1); border: none; color: var(--paper); cursor: pointer; display: grid; place-items: center; font-size: 18px; }
 .bh-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 30px; text-align: center; }
+.bh-intro { justify-content: center; overflow-y: auto; padding-top: 12px; padding-bottom: 12px; scrollbar-width: none; }
+.bh-intro::-webkit-scrollbar { display: none; }
+
+/* "Breathe Hub nedir?" açıklama bloğu */
+.bh-about {
+  width: 100%;
+  max-width: 322px;
+  margin-top: 26px;
+  padding-top: 18px;
+  text-align: left;
+  border-top: 1px solid rgba(243, 238, 228, 0.14);
+}
+.bh-about-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--paper);
+  margin-bottom: 13px;
+}
+.bh-about-row {
+  display: flex;
+  gap: 11px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(243, 238, 228, 0.74);
+  margin-bottom: 11px;
+}
+.bh-about-row:last-child { margin-bottom: 0; }
+.bh-dot {
+  flex: 0 0 6px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage-soft);
+  margin-top: 6px;
+}
 .bh-foot { padding: 0 24px 40px; }
 
 /* The breathing orb — kinetic + illuminated, echoing the installation */
@@ -580,7 +627,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
 .orb-ring.r2 { inset: 24px; opacity: .6; }
 .orb-ring.r3 { inset: 48px; opacity: .4; }
 
-.bh-phase { font-family: var(--serif); font-size: 30px; font-weight: 360; letter-spacing: .04em; min-height: 38px; transition: opacity var(--med); }
+.bh-phase { font-family: var(--serif); font-size: 30px; font-weight: 460; letter-spacing: 0; min-height: 38px; transition: opacity var(--med); }
 .bh-count { font-size: 14px; color: rgba(243,238,228,.6); margin-top: 12px; letter-spacing: .2em; }
 .bh-hint { font-size: 14px; color: rgba(243,238,228,.66); line-height: 1.6; max-width: 280px; }
 
@@ -594,7 +641,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
   animation: seal var(--slow) var(--ease);
 }
 @keyframes seal { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.reward .r-title { font-family: var(--serif); font-size: 27px; margin-top: 6px; }
+.reward .r-title { font-family: var(--serif); font-weight: 560; font-size: 27px; margin-top: 6px; letter-spacing: -0.02em; }
 .reward .r-sub { font-size: 15px; color: rgba(243,238,228,.74); line-height: 1.55; max-width: 290px; margin-top: 8px; }
 .reward .gift-pill { margin-top: 22px; padding: 14px 22px; border-radius: 100px; border: 1.5px dashed var(--sage-soft); font-size: 14px; color: var(--paper); }
 
@@ -612,7 +659,7 @@ input, textarea { -webkit-user-select: text; user-select: text; }
   box-shadow: 0 0 50px -6px rgba(138,154,130,.8);
   animation: seal var(--slow) var(--ease);
 }
-.confirm h2 { font-family: var(--serif); font-size: 28px; margin-bottom: 10px; }
+.confirm h2 { font-family: var(--serif); font-weight: 560; font-size: 28px; margin-bottom: 10px; letter-spacing: -0.02em; }
 .confirm p { color: var(--ink-soft); font-size: 15px; line-height: 1.55; max-width: 280px; margin-bottom: 28px; }
 
 /* ===== Calendar view ======================================================= */

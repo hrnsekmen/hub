@@ -12,9 +12,11 @@ export default function Today({ onOpen, bookings, onTab }) {
     <div className="fade-screen">
       {/* Brand lockup */}
       <div className="brandbar">
-        <BrandMark size={36} radius={11} />
-        <div className="wordmark">HUM</div>
-        <div className="brand-tag">İnsan<br />Şehir Anı</div>
+        <BrandMark size={42} radius={13} />
+        <div className="brand-lockup">
+          <div className="wordmark">HUM</div>
+          <div className="brand-tag">Human Urban Moment</div>
+        </div>
       </div>
 
       {/* Selamlama — yumuşak, güne duyarlı */}
@@ -24,7 +26,7 @@ export default function Today({ onOpen, bookings, onTab }) {
           Günaydın,<br />{USER.name}.
         </div>
         <p className="muted" style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.5 }}>
-          Küçük bir mola yeter. Bugün şehrin yavaşladığı yer burası.
+          Küçük bir mola yeter. Şehrin bugün yavaşladığı yer burası.
         </p>
       </div>
 
@@ -87,7 +89,7 @@ export default function Today({ onOpen, bookings, onTab }) {
           <h3>Senin için sakin seçkiler</h3>
         </div>
         <p className="pad muted" style={{ fontSize: 13.5, marginTop: -6, marginBottom: 14 }}>
-          Son zamanlarda durağanlığa geri döndüğün için.
+          Son zamanlarda sessizliğe geri döndüğün için.
         </p>
         <div className="hscroll">
           {recs.map((e) => <EventCard key={e.id} ev={e} onOpen={onOpen} />)}

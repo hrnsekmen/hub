@@ -39,8 +39,8 @@ export const EVENTS = [
     mood: 'dawn',
     featured: true,
     blurb:
-      'Şehir uyanmadan önce bedene nazik bir uyanış. Acelesiz hareket, uzun nefesler ve arkanda nehir.',
-    tags: ['Her seviye', 'Açık hava', 'Mat sağlanır'],
+      'Şehir uyanmadan bedenini yavaşça uyandır. Acelesiz hareketler, uzun nefesler ve arkanda nehrin sesi.',
+    tags: ['Her seviye', 'Açık hava', 'Mat veriliyor'],
   },
   {
     id: 'e2',
@@ -58,8 +58,8 @@ export const EVENTS = [
     mood: 'mist',
     featured: false,
     blurb:
-      'Sabahın yerine oturması için yirmi dakika. Toplantıların arasında, her şeyin ortasında kısa bir rehberli oturuş.',
-    tags: ['Yeni başlayana uygun', 'Kapalı alan', 'Ücretsiz'],
+      'Sabahı sindirmek için yirmi dakika. Toplantı aralarında, şehrin tam ortasında kısa ve rehberli bir oturuş.',
+    tags: ['Yeni başlayanlara', 'Kapalı alan', 'Ücretsiz'],
   },
   {
     id: 'e3',
@@ -77,8 +77,8 @@ export const EVENTS = [
     mood: 'clay',
     featured: false,
     blurb:
-      'Breathe Hub enstalasyonunun yanında daha uzun bir seans — hareketli ışık formlarıyla eşzamanlı, dengeli nefes.',
-    tags: ['Her seviye', 'Açık hava', 'Hub yakını'],
+      'Breathe Hub’ın hemen yanında daha uzun bir seans — ışıklı formlarla aynı ritimde, dengeli bir nefes.',
+    tags: ['Her seviye', 'Açık hava', 'Hub’a yakın'],
   },
   {
     id: 'e4',
@@ -96,7 +96,7 @@ export const EVENTS = [
     mood: 'sage',
     featured: true,
     blurb:
-      'Uyanan sokaklarda yavaş, dikkatli bir yürüyüş. Dokuyu, ışığı, sesi fark et — şehri bir meditasyon nesnesi olarak gör.',
+      'Uyanan sokaklarda yavaş ve dikkatli bir yürüyüş. Dokuyu, ışığı, sesi fark et; şehrin kendisini bir meditasyona dönüştür.',
     tags: ['Her seviye', 'Açık hava', 'Küçük grup'],
   },
   {
@@ -115,7 +115,7 @@ export const EVENTS = [
     mood: 'dusk',
     featured: false,
     blurb:
-      'Sessiz bir sosyal ritüel. Çay, birkaç nazik soru ve henüz tanışmadığın insanlarla acelesiz bir sohbet.',
+      'Sessiz bir sosyal ritüel. Çay, birkaç içten soru ve henüz tanışmadığın insanlarla acelesiz bir sohbet.',
     tags: ['Sosyal', 'Kapalı alan', 'Çay dahil'],
   },
   {
@@ -134,8 +134,8 @@ export const EVENTS = [
     mood: 'dusk',
     featured: false,
     blurb:
-      'Taşınmış, desteklenmiş, durağan. Haftayı bedenden dışa doğru kapatmak için mum ışığında uzun onarıcı duruşlar.',
-    tags: ['Her seviye', 'Kapalı alan', 'Ekipman sağlanır'],
+      'Desteklenmiş, sakin, hareketsiz. Haftayı içten dışa kapatmak için mum ışığında uzun ve onarıcı duruşlar.',
+    tags: ['Her seviye', 'Kapalı alan', 'Ekipman veriliyor'],
   },
   {
     id: 'e7',
@@ -153,8 +153,8 @@ export const EVENTS = [
     mood: 'dawn',
     featured: false,
     blurb:
-      'Işığı dengeli bir kare ritimle karşıla. Hafta sonuna sağlam başlamak için temiz, sade bir pratik.',
-    tags: ['Yeni başlayana uygun', 'Açık hava', 'Ücretsiz'],
+      'Günün ışığını dengeli bir kare ritimle karşıla. Hafta sonuna sağlam başlamak için sade ve temiz bir pratik.',
+    tags: ['Yeni başlayanlara', 'Açık hava', 'Ücretsiz'],
   },
   {
     id: 'e8',
@@ -172,8 +172,8 @@ export const EVENTS = [
     mood: 'sage',
     featured: true,
     blurb:
-      'Bitkilerin arasına uzan ve işi armonik seslere bırak. Haftayı kapatmak için derinden dinlendirici bir kapanış.',
-    tags: ['Her seviye', 'Kapalı alan', 'Mat sağlanır'],
+      'Bitkilerin arasına uzan, gerisini armonik seslere bırak. Haftayı kapatmak için derinden dinlendiren bir mola.',
+    tags: ['Her seviye', 'Kapalı alan', 'Mat veriliyor'],
   },
 ]
 
@@ -201,8 +201,8 @@ export const MEMBERSHIP = {
 export const INITIAL_GIFTS = [
   {
     id: 'g0',
-    label: 'Bir sonraki atölyene küçük bir hediye',
-    detail: '−%30 · 6 gün içinde geçerli',
+    label: 'Atölyende kullanabileceğin küçük bir hediye',
+    detail: '−%30 · 6 gün geçerli',
     from: 'Breathe Hub · Kuzey Meydan',
     date: '6 Haz',
     used: false,

@@ -25,7 +25,7 @@ export default function MyHum({ bookings, gifts, onOpen, onTab }) {
         <>
           {upcoming.length === 0 ? (
             <div className="empty">
-              <div className="serif">Henüz bir an ayrılmadı</div>
+              <div className="serif">Henüz ayrılmış bir an yok</div>
               Rezervasyonların burada toplanacak.
               <div style={{ marginTop: 20 }}>
                 <button className="btn btn-sage" style={{ width: 'auto', display: 'inline-flex' }} onClick={() => onTab('explore')}>
@@ -58,7 +58,7 @@ export default function MyHum({ bookings, gifts, onOpen, onTab }) {
             <div className="glow" />
             <div className="tier">{MEMBERSHIP.tier} · bu sezon</div>
             <div className="count">{MEMBERSHIP.momentsThisSeason}<small> / {MEMBERSHIP.seasonGoal} an</small></div>
-            <div className="pgoal">{MEMBERSHIP.seasonGoal - MEMBERSHIP.momentsThisSeason} an daha ve bir sezon hediyesi sessizce gelir.</div>
+            <div className="pgoal">{MEMBERSHIP.seasonGoal - MEMBERSHIP.momentsThisSeason} an daha topla; sezon hediyen sessizce gelsin.</div>
             <div className="mbar"><i style={{ width: `${pct}%` }} /></div>
           </div>
 
@@ -66,7 +66,7 @@ export default function MyHum({ bookings, gifts, onOpen, onTab }) {
           <div className="section" style={{ marginTop: 24 }}>
             <div className="section-head"><h3>Varlığın</h3></div>
             <p className="pad muted" style={{ fontSize: 13.5, marginTop: -6, marginBottom: 10 }}>
-              Yedi hafta boyunca burada oldun — tutulacak seri yok, sadece bir ritim.
+              Yedi haftadır buradasın — seri tutmak yok, yalnızca kendi ritmin.
             </p>
             <div className="pad">
               <div className="presence">
@@ -81,7 +81,7 @@ export default function MyHum({ bookings, gifts, onOpen, onTab }) {
           <div className="section" style={{ marginTop: 26 }}>
             <div className="section-head"><h3>Hediyeler</h3></div>
             {gifts.length === 0 && (
-              <p className="pad muted" style={{ fontSize: 13.5 }}>Atölyeye hediye kazanmak için bir Hub’da nefes al.</p>
+              <p className="pad muted" style={{ fontSize: 13.5 }}>Bir Hub’da nefes al; atölyelerde geçerli bir hediye kazan.</p>
             )}
             {gifts.map((g) => (
               <div className={`gift ${g.used ? 'used' : ''}`} key={g.id}>

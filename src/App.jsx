@@ -61,8 +61,8 @@ export default function App() {
     setGifts((arr) => [
       {
         id: 'g' + (arr.length + 1),
-        label: 'Bir sonraki atölyene küçük bir hediye',
-        detail: '−%30 · 7 gün içinde geçerli',
+        label: 'Atölyende kullanabileceğin küçük bir hediye',
+        detail: '−%30 · 7 gün geçerli',
         from: 'Breathe Hub · Kuzey Meydan',
         date: '10 Haz',
         used: false,
@@ -72,7 +72,7 @@ export default function App() {
     setBreathe(false)
     setDetailId(null)
     setTab('explore')
-    showToast('An saklandı · hediyen HUM’umda')
+    showToast('Anın saklandı · hediyen HUM’umda')
   }
 
   const screen = () => {
@@ -135,7 +135,7 @@ export default function App() {
           <div className="confirm">
             <div className="check"><Icon.check width={40} height={40} /></div>
             <h2>Yerin ayrıldı</h2>
-            <p>{confirmEv.title} · {confirmEv.day} {confirmEv.date}, saat {confirmEv.time}. Bir gün önceden seni nazikçe hatırlatırız.</p>
+            <p>{confirmEv.title} · {confirmEv.day} {confirmEv.date}, saat {confirmEv.time}. Bir gün önceden sana nazikçe hatırlatacağız.</p>
             <button className="btn btn-primary" onClick={finishConfirm}>HUM’umda gör</button>
             <button className="btn btn-ghost" style={{ marginTop: 12 }} onClick={() => { setConfirmEv(null); setDetailId(null) }}>
               Keşfetmeye devam et
@@ -150,7 +150,7 @@ export default function App() {
         {toast && <div className="toast">{toast}</div>}
       </div>
 
-      <div className="hint">HUM — çalışan prototip · Breathe Hub’ı denemek için ortadaki butona dokun</div>
+
     </div>
   )
 }

@@ -38,7 +38,7 @@ export default function BreatheHub({ onClose, onComplete }) {
         <div className="bh-top">
           <span className="bh-brand">
             <BrandMark size={26} radius={8} />
-            <span className="eyebrow" style={{ color: 'rgba(243,238,228,.7)' }}>Breathe Hub · North Square</span>
+            <span className="eyebrow" style={{ color: 'rgba(243,238,228,.7)' }}>Breathe Hub · Kuzey Meydan</span>
           </span>
           <button className="x" onClick={onClose}>✕</button>
         </div>
@@ -46,21 +46,37 @@ export default function BreatheHub({ onClose, onComplete }) {
         {/* 1 — Scan / arrive */}
         {stage === 'scan' && (
           <>
-            <div className="bh-body">
-              <div className="orb-wrap">
+            <div className="bh-body bh-intro">
+              <div className="orb-wrap" style={{ width: 168, height: 168, margin: '4px 0 20px' }}>
                 <div className="orb-ring" />
                 <div className="orb-ring r2" />
                 <div className="orb-ring r3" />
-                <div className="orb" style={{ width: 110, height: 110 }} />
+                <div className="orb" style={{ width: 88, height: 88 }} />
               </div>
-              <div className="bh-phase" style={{ fontSize: 26 }}>Bir Hub buldun</div>
-              <p className="bh-hint" style={{ marginTop: 14 }}>
-                Kameranı enstalasyona doğrult ya da doğrudan başla. Yavaş bir dakika ayır — formlar seninle birlikte nefes alacak.
+              <div className="bh-phase" style={{ fontSize: 27 }}>Bir Hub buldun</div>
+              <p className="bh-hint" style={{ marginTop: 12 }}>
+                Kameranı enstalasyona tut ya da hemen başla. Sana bir dakika yeter; ışıklı formlar nefesinle birlikte hareket eder.
               </p>
+
+              <div className="bh-about">
+                <div className="bh-about-title">Breathe Hub nedir?</div>
+                <div className="bh-about-row">
+                  <span className="bh-dot" />
+                  Meydanlara, parklara ve duraklara yerleştirilen, herkese açık bir nefes enstalasyonu.
+                </div>
+                <div className="bh-about-row">
+                  <span className="bh-dot" />
+                  Bir-iki dakikalık kısa bir nefes egzersizi yaparsın; ışıklı organik formlar seninle nefes alır.
+                </div>
+                <div className="bh-about-row">
+                  <span className="bh-dot" />
+                  Sonunda HUM atölyelerinde geçerli bir hediye kazanır, HUM’la tanışmanın ilk adımını atarsın.
+                </div>
+              </div>
             </div>
             <div className="bh-foot">
               <button className="btn btn-sage" onClick={() => { setStep(0); setStage('breathe') }}>
-                <Icon.qr width={18} height={18} /> Ana başla
+                <Icon.qr width={18} height={18} /> Nefese başla
               </button>
             </div>
           </>
@@ -93,19 +109,19 @@ export default function BreatheHub({ onClose, onComplete }) {
             <div className="bh-body">
               <div className="reward">
                 <div className="seal"><BrandMark size={120} radius={60} /></div>
-                <div className="r-title">Bir an, saklandı.</div>
+                <div className="r-title">Bir an, seninle kaldı.</div>
                 <p className="r-sub">
-                  Bu, sezonun bir anı olarak sayılır. Teşekkür olarak, işte bir HUM atölyesine yönelik küçük bir hediye.
+                  Bu, sezonun anlarından biri olarak sayılıyor. Teşekkür olarak HUM atölyelerinde kullanabileceğin küçük bir hediye senin.
                 </p>
-                <div className="gift-pill">🎁 Sonraki atölyende −%30 · 7 gün</div>
+                <div className="gift-pill">🎁 Sonraki atölyende −%30 · 7 gün geçerli</div>
               </div>
             </div>
             <div className="bh-foot">
               <button className="btn btn-sage" onClick={onComplete}>
-                Kullanmak için atölye bul
+                Hediyeni bir atölyede kullan
               </button>
               <button className="btn btn-ghost" style={{ marginTop: 10, color: 'rgba(243,238,228,.8)', borderColor: 'rgba(243,238,228,.25)' }} onClick={onClose}>
-                Sonrası için sakla
+                Sonra kullanırım
               </button>
             </div>
           </>

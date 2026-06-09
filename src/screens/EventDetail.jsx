@@ -55,7 +55,7 @@ export default function EventDetail({ id, onBack, onReserve, isBooked, gifts }) 
 
           {ev.spotsLeft <= 6 && !booked && (
             <div className="spots-note">
-              <Icon.people width={16} height={16} /> {ev.capacity} yerden yalnızca {ev.spotsLeft} tanesi kaldı
+              <Icon.people width={16} height={16} /> {ev.capacity} kişilik kontenjanda son {ev.spotsLeft} yer
             </div>
           )}
 
