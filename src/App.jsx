@@ -12,7 +12,7 @@ import iconUrl from "./img/icon.png";
 const TABS = [
   { id: "today", label: "Bugün", icon: Icon.today },
   { id: "explore", label: "Keşfet", icon: Icon.explore },
-  { id: "hum", label: "HUM’um", icon: Icon.hum },
+  { id: "hum", label: "HUM Akışım", icon: Icon.hum },
   { id: "profile", label: "Profil", icon: Icon.profile },
 ];
 
@@ -56,7 +56,7 @@ export default function App() {
     setConfirmEv(null);
     setDetailId(null);
     setTab("hum");
-    if (ev) showToast("HUM’uma eklendi · orada görüşürüz");
+    if (ev) showToast("HUM Akışıma eklendi · orada görüşürüz");
   };
 
   // Breathe Hub finished → drop a fresh gift, route the user into Explore.
@@ -75,7 +75,7 @@ export default function App() {
     setBreathe(false);
     setDetailId(null);
     setTab("explore");
-    showToast("Anın saklandı · hediyen HUM’umda");
+    showToast("Anın saklandı · hediyen HUM Akışımda");
   };
 
   const screen = () => {
@@ -139,7 +139,6 @@ export default function App() {
               >
                 <img src={iconUrl} alt="" className="breathe-icon" />
               </button>
-              <span className="lbl">Nefes</span>
             </div>
 
             {TABS.slice(2).map((t) => (
@@ -180,7 +179,7 @@ export default function App() {
               {confirmEv.time}. Bir gün önceden sana nazikçe hatırlatacağız.
             </p>
             <button className="btn btn-primary" onClick={finishConfirm}>
-              HUM’umda gör
+              HUM Akışımda gör
             </button>
             <button
               className="btn btn-ghost"

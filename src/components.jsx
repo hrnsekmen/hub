@@ -1,11 +1,11 @@
 import React from "react";
 import { MOODS, CATEGORY_LABEL } from "./data.js";
-import iconUrl from "./img/logo.png";
+import iconUrl from "./img/icon.png";
 
 export { iconUrl };
 
 /* ---- HUM brand mark (the line-art figure logo) -------------------------- */
-export function BrandMark({ size = 36, radius, className, style }) {
+export function BrandMark({ size = 36, className, style, light = false }) {
   return (
     <img
       src={iconUrl}
@@ -14,9 +14,9 @@ export function BrandMark({ size = 36, radius, className, style }) {
       height={size}
       className={className}
       style={{
-        borderRadius: radius ?? size * 0.3,
-        objectFit: "cover",
+        objectFit: "contain",
         display: "block",
+        filter: light ? "brightness(0) invert(1)" : undefined,
         ...style,
       }}
     />

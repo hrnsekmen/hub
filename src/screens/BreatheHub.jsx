@@ -36,10 +36,15 @@ export default function BreatheHub({ onClose, onComplete }) {
       <div className="sheet-scrim" onClick={stage === 'reward' ? undefined : onClose} />
       <div className="bh">
         <div className="bh-top">
-          <span className="bh-brand">
-            <BrandMark size={26} radius={8} />
-            <span className="eyebrow" style={{ color: 'rgba(243,238,228,.7)' }}>Breathe Hub · Kuzey Meydan</span>
-          </span>
+          <div className="bh-brand">
+            <span className="bh-brand-mark" aria-hidden="true">
+              <BrandMark size={22} light />
+            </span>
+            <div className="bh-brand-copy">
+              <span className="bh-brand-title">Breathe Hub</span>
+              <span className="bh-brand-venue">Kuzey Meydan</span>
+            </div>
+          </div>
           <button className="x" onClick={onClose}>✕</button>
         </div>
 
@@ -108,7 +113,7 @@ export default function BreatheHub({ onClose, onComplete }) {
           <>
             <div className="bh-body">
               <div className="reward">
-                <div className="seal"><BrandMark size={120} radius={60} /></div>
+                <div className="seal"><BrandMark size={56} light /></div>
                 <div className="r-title">Bir an, seninle kaldı.</div>
                 <p className="r-sub">
                   Bu, sezonun anlarından biri olarak sayılıyor. Teşekkür olarak HUM atölyelerinde kullanabileceğin küçük bir hediye senin.

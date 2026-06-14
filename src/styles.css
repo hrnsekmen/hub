@@ -243,46 +243,86 @@ textarea {
   margin-bottom: 8px;
 }
 
-/* ===== Brand lockup ======================================================== */
-.brandbar {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 6px 24px 0;
+/* ===== Today header ======================================================== */
+.today-top {
+  padding: 28px 24px 0;
 }
-.brandbar .brand-lockup {
+.brand-lockup {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.brandbar .wordmark {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 23px;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  color: var(--ink);
-}
-.brandbar .brand-tag {
-  margin-top: 5px;
-  font-size: 9.5px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 600;
-}
-.bh-brand {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  padding: 2px 0 0;
+}
+.brand-lockup::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin: 20px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line) 20%,
+    var(--line) 80%,
+    transparent
+  );
+  opacity: 0.85;
+}
+.brand-logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  filter: contrast(1.04);
 }
 
 /* ===== Greeting (Today) ==================================================== */
 .greet {
-  padding: 16px 24px 6px;
+  padding: 24px 0 6px;
 }
-.greet .display {
-  margin-top: 6px;
+.greet-sub {
+  margin-top: 10px;
+  font-size: 20.5px;
+  line-height: 1.5;
+}
+.bh-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.bh-brand-mark {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.22);
+}
+.bh-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.bh-brand-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 238, 228, 0.92);
+  line-height: 1.2;
+}
+.bh-brand-venue {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: rgba(243, 238, 228, 0.55);
+  line-height: 1.2;
 }
 
 /* ===== Hero / featured moment ============================================== */
@@ -412,14 +452,22 @@ textarea {
 /* Horizontal scroller */
 .hscroll {
   display: flex;
+  align-items: flex-start;
   gap: 14px;
   overflow-x: auto;
-  padding: 2px 24px 6px;
+  padding: 0 0 6px;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
 }
 .hscroll::-webkit-scrollbar {
   display: none;
+}
+.hscroll .ecard:first-child {
+  margin-left: 24px;
+}
+.hscroll .ecard:last-child {
+  margin-right: 24px;
 }
 
 /* ===== Event cards ========================================================= */
@@ -643,7 +691,7 @@ textarea {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 96px;
+  height: 83px;
   z-index: 50;
   display: flex;
   align-items: flex-start;
@@ -692,14 +740,21 @@ textarea {
 .breathe-btn {
   position: absolute;
   left: 50%;
-  top: -18px;
+  top: -8px;
   margin-left: -30px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: transparent;
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--sage-soft),
+    var(--sage-deep)
+  );
+  box-shadow:
+    0 12px 26px -10px rgba(138, 154, 130, 0.9),
+    inset 0 2px 6px rgba(255, 255, 255, 0.35);
   display: grid;
   place-items: center;
 }
@@ -726,10 +781,11 @@ textarea {
   }
 }
 .breathe-icon {
-  width: 52px;
-  height: 52px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
 }
 .tab-breathe .lbl {
   display: block;

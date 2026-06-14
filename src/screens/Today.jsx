@@ -6,10 +6,8 @@ import {
   Chip,
   EventCard,
   priceLabel,
-  BrandMark,
 } from "../components.jsx";
-
-import iconUrl from "../img/logo.png";
+import logoUrl from "../img/logo.png";
 
 export default function Today({ onOpen, bookings, onTab }) {
   const featured = EVENTS.find((e) => e.id === FEATURED_ID);
@@ -17,34 +15,21 @@ export default function Today({ onOpen, bookings, onTab }) {
   const nearby = EVENTS.filter((e) => e.id !== FEATURED_ID).slice(0, 5);
   return (
     <div className="fade-screen">
-      {/* Brand lockup */}
-      <div className="brandbar">
-        <img
-          src={iconUrl}
-          alt="HUM"
-          width={125}
-          style={{
-            borderRadius: 13,
-            objectFit: "contain",
-            margin: "auto",
-            marginTop: 15,
-          }}
-        />
-      </div>
-
-      <div className="greet">
-        <div className="display">
-          Günaydın,
-          <br />
-          {USER.name}.
+      <header className="today-top">
+        <div className="brand-lockup">
+          <img src={logoUrl} alt="HUM" className="brand-logo" />
         </div>
-        <p
-          className="muted"
-          style={{ marginTop: 10, fontSize: 20.5, lineHeight: 1.5 }}
-        >
-          Küçük bir mola yeter. Şehrin bugün yavaşladığı yer burası.
-        </p>
-      </div>
+        <div className="greet">
+          <div className="display">
+            Günaydın,
+            <br />
+            {USER.name}.
+          </div>
+          <p className="greet-sub muted">
+            Küçük bir mola yeter. Şehrin bugün yavaşladığı yer burası.
+          </p>
+        </div>
+      </header>
 
       {/* Günün anı */}
       <div className="section-head" style={{ marginTop: 22 }}>
