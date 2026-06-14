@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles.css'
-import iconUrl from './img/icon.jpeg'
+import iconUrl from './img/icon.png'
 
 // Brand favicon
 const link = document.querySelector("link[rel='icon']") || document.createElement('link')

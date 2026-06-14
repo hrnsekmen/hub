@@ -1,38 +1,54 @@
-import React from 'react'
-import { EVENTS, FEATURED_ID, USER, CATEGORY_LABEL } from '../data.js'
-import { Mood, Icon, Chip, EventCard, priceLabel, BrandMark } from '../components.jsx'
+import React from "react";
+import { EVENTS, FEATURED_ID, USER, CATEGORY_LABEL } from "../data.js";
+import {
+  Mood,
+  Icon,
+  Chip,
+  EventCard,
+  priceLabel,
+  BrandMark,
+} from "../components.jsx";
+
+import iconUrl from "../img/logo.png";
 
 export default function Today({ onOpen, bookings, onTab }) {
-  const featured = EVENTS.find((e) => e.id === FEATURED_ID)
-  const nextBooking = EVENTS.find((e) => bookings.includes(e.id))
-  const nearby = EVENTS.filter((e) => e.id !== FEATURED_ID).slice(0, 5)
-  const recs = EVENTS.filter((e) => ['meditation', 'community'].includes(e.category)).slice(0, 4)
-
+  const featured = EVENTS.find((e) => e.id === FEATURED_ID);
+  const nextBooking = EVENTS.find((e) => bookings.includes(e.id));
+  const nearby = EVENTS.filter((e) => e.id !== FEATURED_ID).slice(0, 5);
   return (
     <div className="fade-screen">
       {/* Brand lockup */}
       <div className="brandbar">
-        <BrandMark size={42} radius={13} />
-        <div className="brand-lockup">
-          <div className="wordmark">HUM</div>
-          <div className="brand-tag">Human Urban Moment</div>
-        </div>
+        <img
+          src={iconUrl}
+          alt="HUM"
+          width={125}
+          style={{
+            borderRadius: 13,
+            objectFit: "contain",
+            margin: "auto",
+            marginTop: 15,
+          }}
+        />
       </div>
 
-      {/* Selamlama — yumuşak, güne duyarlı */}
       <div className="greet">
-        <div className="eyebrow">Salı · Açık bir sabah</div>
         <div className="display">
-          Günaydın,<br />{USER.name}.
+          Günaydın,
+          <br />
+          {USER.name}.
         </div>
-        <p className="muted" style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.5 }}>
+        <p
+          className="muted"
+          style={{ marginTop: 10, fontSize: 20.5, lineHeight: 1.5 }}
+        >
           Küçük bir mola yeter. Şehrin bugün yavaşladığı yer burası.
         </p>
       </div>
 
       {/* Günün anı */}
       <div className="section-head" style={{ marginTop: 22 }}>
-        <h3>Günün anı</h3>
+        <h3>Günün ilk etkinliği</h3>
       </div>
       <div className="hero" onClick={() => onOpen(featured.id)} role="button">
         <Mood className="hero-grad" mood={featured.mood} />
@@ -48,26 +64,40 @@ export default function Today({ onOpen, bookings, onTab }) {
           <Icon.pin width={16} height={16} /> {featured.place}
         </div>
         <div className="hero-when" style={{ marginTop: 6 }}>
-          <Icon.clock width={16} height={16} /> {featured.day} {featured.date} · {featured.time}
+          <Icon.clock width={16} height={16} /> {featured.day} {featured.date} ·{" "}
+          {featured.time}
         </div>
       </div>
 
       {/* Your next reservation, if any */}
       {nextBooking && (
         <div className="section">
-          <div className="section-head"><h3>Sıradaki anın</h3>
-            <button className="link" onClick={() => onTab('hum')}>Tüm rezervasyonlar</button>
+          <div className="section-head">
+            <h3>Sıradaki etkinliğin</h3>
+            <button className="link" onClick={() => onTab("hum")}>
+              Tüm rezervasyonlar
+            </button>
           </div>
-          <div className="brow" onClick={() => onOpen(nextBooking.id)} style={{ cursor: 'pointer' }}>
+          <div
+            className="brow"
+            onClick={() => onOpen(nextBooking.id)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="bdate">
-              <div className="dd">{nextBooking.date.split(' ')[0]}</div>
-              <div className="dm">{nextBooking.date.split(' ')[1]}</div>
+              <div className="dd">{nextBooking.date.split(" ")[0]}</div>
+              <div className="dm">{nextBooking.date.split(" ")[1]}</div>
             </div>
             <div className="bbody">
               <div className="bt">{nextBooking.title}</div>
-              <div className="bm">{nextBooking.time} · {nextBooking.place}</div>
+              <div className="bm">
+                {nextBooking.time} · {nextBooking.place}
+              </div>
             </div>
-            <Icon.chev width={20} height={20} style={{ color: 'var(--ink-faint)' }} />
+            <Icon.chev
+              width={20}
+              height={20}
+              style={{ color: "var(--ink-faint)" }}
+            />
           </div>
         </div>
       )}
@@ -75,26 +105,17 @@ export default function Today({ onOpen, bookings, onTab }) {
       {/* Nearby */}
       <div className="section">
         <div className="section-head">
-          <h3>Yakınında</h3>
-          <button className="link" onClick={() => onTab('explore')}>Tümünü keşfet</button>
+          <h3>Yakınındaki etkinlikler</h3>
+          <button className="link" onClick={() => onTab("explore")}>
+            Tümünü keşfet
+          </button>
         </div>
         <div className="hscroll">
-          {nearby.map((e) => <EventCard key={e.id} ev={e} onOpen={onOpen} />)}
-        </div>
-      </div>
-
-      {/* Nazik öneri */}
-      <div className="section">
-        <div className="section-head">
-          <h3>Senin için sakin seçkiler</h3>
-        </div>
-        <p className="pad muted" style={{ fontSize: 13.5, marginTop: -6, marginBottom: 14 }}>
-          Son zamanlarda sessizliğe geri döndüğün için.
-        </p>
-        <div className="hscroll">
-          {recs.map((e) => <EventCard key={e.id} ev={e} onOpen={onOpen} />)}
+          {nearby.map((e) => (
+            <EventCard key={e.id} ev={e} onOpen={onOpen} />
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
