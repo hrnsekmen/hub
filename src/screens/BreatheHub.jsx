@@ -78,8 +78,9 @@ export default function BreatheHub({ onClose, onComplete }) {
                 <div className="bh-about-title">Breathe Hub nedir?</div>
                 <div className="bh-about-row">
                   <span className="bh-dot" />
-                  Meydanlara, parklara ve duraklara yerleştirilen, herkese açık
-                  bir nefes durağı.
+                  Alışveriş merkezleri, plazalar ve yoğun kamusal yaşam
+                  alanlarına yerleştirilen, herkese açık bir nefes egzersiz
+                  durağıdır.
                 </div>
                 <div className="bh-about-row">
                   <span className="bh-dot" />
@@ -88,9 +89,8 @@ export default function BreatheHub({ onClose, onComplete }) {
                 </div>
                 <div className="bh-about-row">
                   <span className="bh-dot" />
-                  Alışveriş merkezleri, plazalar ve yoğun kamusal yaşam
-                  alanlarına yerleştirilen, herkese açık bir nefes egzersiz
-                  durağıdır.
+                  Sonunda HUM atölyelerinde geçerli bir hediye kazanır, iyi olma
+                  deneyimini HUM etkinlikleriyle sürdürebilirsin.
                 </div>
               </div>
             </div>
